@@ -1,0 +1,22 @@
+{
+  "name": "durak",
+  "version": "1.0.0",
+  "description": "igra",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasyasha/durak.git"
+  },
+  "author": "Yava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vasyasha/durak/issues"
+  },
+  "homepage": "https://github.com/vasyasha/durak#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
