@@ -1,3 +1,5 @@
+// Decks can be of different variants (aka sizes), I used to only play 36 but want to keep the option of more cards open.
+
 import type { Rank, Card, DeckSize } from '../types/gameTypes.js';
 import { SUITS, DECK_VARIANTS, DEFAULT_DECK_SIZE } from '../config/constants.js';
 import { createCard } from './card.js';
@@ -23,7 +25,7 @@ function shuffle(deck: Card[]): Card[] {
         // Random index from 0 to i
         const j = Math.floor(Math.random() * (i + 1));
         // Swap the random index with card at i, the exclamation points are TypeScript's non-null assertion operators
-        [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j]!, shuffledDeck[i]!]
+        [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]]
     }
     return shuffledDeck
 }

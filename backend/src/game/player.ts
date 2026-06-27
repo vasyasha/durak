@@ -1,1 +1,1 @@
- 
+// Player = socket ID + their hand. Seat at the table = their index in the list of players in GameState.

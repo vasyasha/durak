@@ -4,8 +4,7 @@ export type Rank = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 
 export type DeckSize = 36 | 52;
 
-export type Status = 'waiting' | 'in-progress' | 'paused' | 'finished';
-
+export type GameStatus = 'waiting' | 'in-progress' | 'paused' | 'finished';
 
 
 export interface Card {
@@ -28,11 +27,18 @@ export interface PlayPair {
 
 
 export interface GameState {
-    status: Status;
+    status: GameStatus;
     players: Player[];
     deck: Card[];
     trumpCard: Card;
     trumpSuit: Suit;
     playState: PlayPair[];
     discardPile: Card[]
+}
+
+
+
+export interface RuleResponse {
+    allowed: boolean;
+    reason: string;
 }
