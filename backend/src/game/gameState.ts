@@ -12,8 +12,11 @@ export function createGameState(deckSize: DeckSize = DEFAULT_DECK_SIZE): GameSta
         deck: deck,
         trumpCard: trumpCard,
         trumpSuit: trumpSuit,
-        playState: [],
-        discardPile: []
+        discardPile: [],
+        roundStage: 'unstarted',
+        tableState: [],
+        defenderInd: 1,
+        firstAttackerInd: 0
     }
 
     return gameState

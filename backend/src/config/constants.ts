@@ -1,4 +1,4 @@
-import type { Suit, Rank, DeckSize } from '../types/gameTypes.js';
+import type { Suit, Rank, DeckSize, RuleResponse } from '../types/gameTypes.js';
 
 
 // PLAYER CONSTANTS
@@ -25,3 +25,7 @@ export const DECK_VARIANTS: Record<DeckSize, Rank[]> = {
     52: RANKS_52,
     36: RANKS_36
 };
+
+
+// RULE CONSTANTS
+export const RULE_PASSED: RuleResponse = { allowed: true, reason: null };

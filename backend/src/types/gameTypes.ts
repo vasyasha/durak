@@ -4,7 +4,9 @@ export type Rank = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14;
 
 export type DeckSize = 36 | 52;
 
-export type GameStatus = 'waiting' | 'in-progress' | 'paused' | 'finished';
+export type GameStatus = 'waiting' | 'in_progress' | 'paused' | 'finished';
+
+export type RoundStage = 'unstarted' | 'first_attack' | 'first_defense' | 'scramble';
 
 
 export interface Card {
@@ -14,13 +16,12 @@ export interface Card {
 
 
 export interface Player {
-    id: string;
-    username: string;
+    socketID: string;
     hand: Card[];
 }
 
 
-export interface PlayPair {
+export interface TablePair {
     attackCard: Card;
     defendCard: Card | null;
 }
@@ -32,13 +33,17 @@ export interface GameState {
     deck: Card[];
     trumpCard: Card;
     trumpSuit: Suit;
-    playState: PlayPair[];
-    discardPile: Card[]
+    discardPile: Card[];
+    roundStage: RoundStage;
+    tableState: TablePair[];
+    defenderInd: number;
+    firstAttackerInd: number;
 }
 
 
 
 export interface RuleResponse {
     allowed: boolean;
-    reason: string;
+    reason: string | null;
 }
+
