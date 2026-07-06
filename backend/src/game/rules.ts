@@ -9,9 +9,9 @@ export function canAttack(gameState: GameState, attackerInd: number, attackCards
         const resp: RuleResponse = {
             allowed: false,
             reason: 'Not your turn to attack'
-        }
-        return resp
+        };
+        return resp;
     }
     // TODO: ADD ACTUAL GAME RULE CHECKS    
-    return RULE_PASSED
+    return RULE_PASSED;
 }

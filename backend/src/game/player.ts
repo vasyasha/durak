@@ -3,9 +3,9 @@ import type { Player, Card } from '../types/gameTypes.js';
 import { areCardsEqual } from './card.js';
 
 export function removeFromHand(player: Player, cards: Card[]): Player {
-    return { ...player, hand: player.hand.filter((card1) => !cards.some((card2) => areCardsEqual(card1, card2))) }
+    return { ...player, hand: player.hand.filter((card1) => !cards.some((card2) => areCardsEqual(card1, card2))) };
 }
 
 export function addToHand(player: Player, cards: Card[]): Player {
-    return { ...player, hand: [...player.hand, ...cards] }
+    return { ...player, hand: [...player.hand, ...cards] };
 }

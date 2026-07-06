@@ -18,6 +18,7 @@ export interface Card {
 export interface Player {
     socketID: string;
     hand: Card[];
+    passing: boolean;
 }
 
 

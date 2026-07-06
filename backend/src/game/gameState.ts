@@ -17,8 +17,8 @@ export function createGameState(deckSize: DeckSize = DEFAULT_DECK_SIZE): GameSta
         tableState: [],
         defenderInd: 1,
         firstAttackerInd: 0
-    }
+    };
 
-    return gameState
+    return gameState;
 }
 
