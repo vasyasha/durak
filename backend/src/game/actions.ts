@@ -1,5 +1,4 @@
-import type { GameState, Card, TablePair } from '../types/gameTypes.js';
-import { } from '../config/constants.js';
+import type { GameState, Card } from '../types/gameTypes.js';
 import { addNewToTable, defendOnTable, flattenTablePairs } from './table.js';
 import { removeFromHand, addToHand } from './player.js';
 
@@ -15,8 +14,9 @@ export function attack(gameState: GameState, attackerInd: number, attackCards: C
     return newGameState;
 }
 
-export function defend(gameState: GameState, defenderInd: number, defendCard: Card, attackCard: Card): GameState {
+export function defend(gameState: GameState, defendCard: Card, attackCard: Card): GameState {
     const players = gameState.players;
+    const defenderInd = gameState.defenderInd;
     const newGameState: GameState = {
         ...gameState,
         tableState: defendOnTable(gameState.tableState, defendCard, attackCard),
@@ -34,8 +34,9 @@ export function pass(gameState: GameState, passerInd: number): GameState {
     return newGameState;
 }
 
-export function take(gameState: GameState, defenderInd: number): GameState {
+export function take(gameState: GameState): GameState {
     const players = gameState.players;
+    const defenderInd = gameState.defenderInd;
     const newGameState: GameState = {
         ...gameState,
         tableState: [],
@@ -43,5 +44,3 @@ export function take(gameState: GameState, defenderInd: number): GameState {
     };
     return newGameState;
 }
-
-

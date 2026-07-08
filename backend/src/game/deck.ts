@@ -29,3 +29,10 @@ function shuffle(deck: Card[]): Card[] {
     }
     return shuffledDeck;
 }
+
+
+export function dealCards(deck: Card[], n: number): { dealtCards: Card[], remainingDeck: Card[] } {
+    const dealtCards = deck.slice(0, n);
+    const remainingDeck = deck.slice(n);
+    return { dealtCards, remainingDeck };
+} 

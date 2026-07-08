@@ -14,5 +14,5 @@ export function defendOnTable(tableState: TablePair[], defendCard: Card, attackC
 }
 
 export function flattenTablePairs(tableState: TablePair[]): Card[] {
-    return tableState.flatMap((pair) => (pair.defendCard === null ? [pair.attackCard] : [pair.attackCard, pair.defendCard]));
+    return tableState.flatMap((pair) => ([pair.attackCard, pair.defendCard])).filter((card): card is Card => card !== null);
 }

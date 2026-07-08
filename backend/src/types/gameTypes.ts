@@ -32,7 +32,7 @@ export interface GameState {
     status: GameStatus;
     players: Player[];
     deck: Card[];
-    trumpCard: Card;
+    trumpCard: Card | null;
     trumpSuit: Suit;
     discardPile: Card[];
     roundStage: RoundStage;
