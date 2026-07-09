@@ -1,4 +1,4 @@
-import { TablePair } from '../types/gameTypes.js';
+import type { TablePair } from '../types/gameTypes.js';
 import { expect, test, describe } from 'vitest';
 import { addNewToTable, defendOnTable, flattenTablePairs } from './table.js';
 

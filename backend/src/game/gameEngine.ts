@@ -1,9 +1,10 @@
 // FILE FOR NON-USER STUFF, SUCH AS DEALING CARDS, DISCARDING THE TABLE, INITIALLY PICKING TRUMP CARD ETC
-import type { GameState, Card } from '../types/gameTypes.js';
-import { DEFAULT_HAND_SIZE } from '../config/constants.js';
-import { addNewToTable, defendOnTable, flattenTablePairs } from './table.js';
-import { removeFromHand, addToHand } from './player.js';
-import { dealCards } from './deck.js';
+import type { GameState, DeckSize, Player } from '../types/gameTypes.js';
+import { DEFAULT_HAND_SIZE, DEFAULT_DECK_SIZE } from '../config/constants.js';
+import { flattenTablePairs } from './table.js';
+import { addToHand } from './player.js';
+import { createDeck, dealCards } from './deck.js';
+import { createGameState } from './gameState.js';
 
 
 export function discardTable(gameState: GameState): GameState {
@@ -40,5 +41,23 @@ export function fillHands(gameState: GameState, handSize: number = DEFAULT_HAND_
     };
 
     const newGameState = { ...gameState, players, deck, trumpCard };
+    return newGameState;
+}
+
+
+export function gameStartSetup(players: Player[], deckSize: DeckSize = DEFAULT_DECK_SIZE): GameState {
+    // Important to initialize any game - Players (input via Socket?), initial deck and trump cards, (unsure about filling hands and turn order)
+    const initDeck = createDeck(deckSize, true);
+    const trumpCard = initDeck[0];
+    const trumpSuit = trumpCard.suit;
+    const deck = initDeck.slice(1);
+
+    const initGameState = { ...createGameState(), players, trumpCard, trumpSuit, deck };
+    const fullHandsGameState = fillHands(initGameState);
+
+    // First attacker - person with lowest trump suit card. If lower than current trump card - swap with it. If no one has a trump suit card, pick a different trump card until the suit is in someones hand.
+    // ALSO - just realized the hands need to be dealt before the trump card is chosen.
+
+    const newGameState: GameState = { ...createGameState(), players, trumpCard, trumpSuit, deck };
     return newGameState;
 }
