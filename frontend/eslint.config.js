@@ -20,9 +20,11 @@ export default defineConfig([
       },
   },
   {
+    files: ['**/*.{ts,tsx}'],
     rules: {
-        "@typescript-eslint/no-unused-vars": "warn",
-        "semi": "error"
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "semi": "error"
     }
   }
 ])
