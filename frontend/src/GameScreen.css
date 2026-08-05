@@ -1,0 +1,35 @@
+.game-layout {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 80px 1fr 100px;
+  grid-template-areas:
+    'menu      top      settings'
+    'left     field     right'
+    'player   player    actions';
+  height: 100vh;
+}
+
+.top-hand { grid-area: top; }
+.settings { grid-area: settings; }
+.left-hand { grid-area: left; }
+.playing-field { grid-area: field; }
+.right-hand { grid-area: right; }
+.player-hand {
+    grid-area: player;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.action-buttons { grid-area: actions; }
+
+
+.card {
+    width: 20px;
+    height: 40px;
+    background-color: rgba(5, 131, 24, 0.317);
+    outline: solid black;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
