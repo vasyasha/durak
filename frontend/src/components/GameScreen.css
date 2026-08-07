@@ -21,15 +21,3 @@
     justify-content: center;
 }
 .action-buttons { grid-area: actions; }
-
-
-.card {
-    width: 20px;
-    height: 40px;
-    background-color: rgba(5, 131, 24, 0.317);
-    outline: solid black;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

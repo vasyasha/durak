@@ -1,0 +1,19 @@
+.hand-view {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 10px;
+}
+
+.hand-view--player {
+    flex-direction: row;
+}
+.hand-view--left {
+    flex-direction: column;
+}
+.hand-view--top {
+    flex-direction: row-reverse;
+}
+.hand-view--right {
+    flex-direction: column-reverse;
+}
