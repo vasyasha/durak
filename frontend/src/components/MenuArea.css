@@ -1,0 +1,7 @@
+.menu-area {
+    grid-area: menu;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(244, 4, 244, 0.215);
+}

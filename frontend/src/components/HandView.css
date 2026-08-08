@@ -1,19 +1,24 @@
 .hand-view {
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
+    background-color: rgba(4, 136, 251, 0.194);
     margin: 10px;
 }
 
-.hand-view--player {
+.hand-view-player {
+    grid-area: player-hand;
     flex-direction: row;
 }
-.hand-view--left {
+.hand-view-left {
+    grid-area: left-hand;
     flex-direction: column;
 }
-.hand-view--top {
+.hand-view-top {
+    grid-area: top-hand;
     flex-direction: row-reverse;
 }
-.hand-view--right {
+.hand-view-right {
+    grid-area: right-hand;
     flex-direction: column-reverse;
 }

@@ -1,0 +1,8 @@
+.actions-area {
+    grid-area: actions;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(198, 3, 3, 0.215);
+}

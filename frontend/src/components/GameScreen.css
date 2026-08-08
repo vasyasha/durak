@@ -1,23 +1,10 @@
-.game-layout {
+.game-screen {
   display: grid;
   grid-template-columns: 100px 1fr 100px;
   grid-template-rows: 80px 1fr 100px;
   grid-template-areas:
-    'menu      top      settings'
-    'left     field     right'
-    'player   player    actions';
-  height: 100vh;
+    'menu           top-hand      settings'
+    'left-hand       field     right-hand'
+    'player-hand   player-hand    actions';
+  height: 95vh;
 }
-
-.top-hand { grid-area: top; }
-.settings { grid-area: settings; }
-.left-hand { grid-area: left; }
-.playing-field { grid-area: field; }
-.right-hand { grid-area: right; }
-.player-hand {
-    grid-area: player;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.action-buttons { grid-area: actions; }

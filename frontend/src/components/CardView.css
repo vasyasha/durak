@@ -1,10 +1,14 @@
 .card-view {
-    width: 20px;
+    width: 30px;
     height: 40px;
-    background-color: rgba(5, 131, 24, 0.317);
+    background-color: rgba(2, 98, 105, 0.566);
     outline: solid black;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card-view-rotated {
+    transform: rotate(90deg);
 }

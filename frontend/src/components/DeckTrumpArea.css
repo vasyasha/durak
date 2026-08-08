@@ -1,0 +1,9 @@
+.deck-trump-area {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 68, 0, 0.315);
+}
