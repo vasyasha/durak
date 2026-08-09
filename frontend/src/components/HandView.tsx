@@ -1,8 +1,8 @@
 import type { Card } from '../types/gameTypes.js';
+import type { HandPosition, CardRotation } from '../types/visualTypes.js';
 import { CardView } from './CardView.js';
 import './HandView.css';
 
-type HandPosition = 'player' | 'left' | 'top' | 'right'
 
 interface HandViewProps {
     cards: Card[];
@@ -16,10 +16,17 @@ const positionClasses: Record<HandPosition, string> = {
     'right': 'hand-view-right'
 };
 
+const positionRotation: Record<HandPosition, CardRotation> = {
+    'player': 'none',
+    'left': 'right',
+    'top': 'full',
+    'right': 'left'
+};
+
 export function HandView({ cards, position }: HandViewProps) {
     const shown = (position === 'player');
-    const rotated = (position === 'left' || position === 'right');
-    const cardElements = cards.map(card => <CardView key={`${card.suit}${card.rank}`} card={card} shown={shown} rotated={rotated} />);
+    const rotation = positionRotation[position];
+    const cardElements = cards.map(card => <CardView key={`${card.suit}${card.rank}`} card={card} shown={shown} rotation={rotation} />);
     return (
         <div className={`hand-view ${positionClasses[position]}`}>
             {cardElements}

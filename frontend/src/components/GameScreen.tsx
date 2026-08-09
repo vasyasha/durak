@@ -1,3 +1,6 @@
+import { Application, extend } from '@pixi/react';
+import { Sprite } from 'pixi.js';
+
 import { HandView } from './HandView.js';
 import { SettingsArea } from './SettingsArea.js';
 import { MenuArea } from './MenuArea.js';
@@ -5,7 +8,10 @@ import { ActionsArea } from './ActionsArea.js';
 import { PlayingField } from './PlayingField.js';
 import './GameScreen.css';
 
-function GameScreen() {
+extend({ Sprite });
+
+export function GameScreen() {
+
     return (
         <div className='game-screen'>
             <HandView position={'player'} cards={[{ suit: 'h', rank: 7 }, { suit: 'h', rank: 10 }, { suit: 'h', rank: 14 }]} />
@@ -19,5 +25,3 @@ function GameScreen() {
         </div>
     );
 }
-
-export default GameScreen;

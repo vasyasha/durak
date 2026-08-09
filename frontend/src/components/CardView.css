@@ -9,6 +9,12 @@
     align-items: center;
 }
 
-.card-view-rotated {
+.card-view-rotated-left {
+    transform: rotate(-90deg);
+}
+.card-view-rotated-right {
     transform: rotate(90deg);
+}
+.card-view-rotated-full {
+    transform: rotate(180deg);
 }
